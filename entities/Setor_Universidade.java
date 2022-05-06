@@ -6,16 +6,16 @@ public class Setor_Universidade {
     private int idsetor;
     private String nomesetor;
 
-    public Setor_Universidade(int id, String nomesetor) {
+    public Setor_Universidade(int idsetor, String nomesetor) {
         this.idsetor = idsetor;
         this.nomesetor = nomesetor;                                                
     }
 
-    public int getId() {
+    public int getIdsetor() {
         return idsetor;
     }
 
-    public void setId(int idsetor) {
+    public void setIdsetor(int idsetor) {
         this.idsetor = idsetor;
     }
 
