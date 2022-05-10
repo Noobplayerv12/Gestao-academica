@@ -1,4 +1,5 @@
 package entities;
+import java.util.ArrayList;
 
 import java.util.Date;
 
@@ -8,9 +9,8 @@ public class Historico {
     private String orgaoDestino;
     private boolean parecer;
     private boolean situacaoProcesso;
+	private ArrayList<Processos> processos;
     
-    
-	
     public Historico(Date dataEncaminhamento, String orgaoDestino, boolean parecer, boolean situacaoProcesso) {
 		super();
 		this.dataEncaminhamento = dataEncaminhamento;

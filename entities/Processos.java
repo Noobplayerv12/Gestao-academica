@@ -1,10 +1,15 @@
 package entities;
 import java.util.Date;
+import java.util.ArrayList;
 public class Processos{
     private int numero;
     private String finalidade;
     private String descricao;
     private Date dataEntrada;
+    private Alunos aluno;
+    private Funcionario funcionario;
+    private Setor_Universidade setor;
+
     private ArrayList<Setor_Universidade> Setor_Universidade;
 
         public Processos(int numero, String finalidade, String descricao, Date dataEntrada) {

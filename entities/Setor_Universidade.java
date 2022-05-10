@@ -1,10 +1,13 @@
 package entities;
 
 
+package entities;
+import java.util.ArrayList;
 public class Setor_Universidade {
 
     private int idsetor;
     private String nomesetor;
+    private ArrayList<Processos> processos;
 
     public Setor_Universidade(int idsetor, String nomesetor) {
         this.idsetor = idsetor;
