@@ -11,7 +11,9 @@ public class Alunos extends Pessoa{
 		this.matricula = matricula;
 		this.curso = curso;
 	}
-	public String getMatricula() {
+	public Alunos() {
+    }
+    public String getMatricula() {
 		return matricula;
 	}
 	public void setMatricula(String matricula) {
@@ -23,6 +25,8 @@ public class Alunos extends Pessoa{
 	public void setCurso(String curso) {
 		this.curso = curso;
 	}
-	
+	public ArrayList<Processos> getProcessos() {
+		return processos;
+	}
 	
 }

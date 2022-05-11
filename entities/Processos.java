@@ -1,16 +1,15 @@
 package entities;
 import java.util.Date;
-import java.util.ArrayList;
 public class Processos{
     private int numero;
     private String finalidade;
     private String descricao;
     private Date dataEntrada;
     private Alunos aluno;
-    private Funcionario funcionario;
+    private Funcionarios funcionario;
     private Setor_Universidade setor;
 
-     public Processos(int numero, String finalidade, String descricao, Date dataEntrada, Alunos aluno, Funcionario funcionario, Setor_Universidade setor) {
+     public Processos(int numero, String finalidade, String descricao, Date dataEntrada, Alunos aluno, Funcionarios funcionario, Setor_Universidade setor) {
         this.numero = numero;
         this.finalidade = finalidade;
         this.descricao = descricao;
@@ -28,11 +27,11 @@ public class Processos{
         this.aluno = aluno;
     }
 
-    public Funcionario getFuncionario() {
+    public Funcionarios getFuncionario() {
         return funcionario;
     }
 
-    public void setFuncionario(Funcionario funcionario) {
+    public void setFuncionario(Funcionarios funcionario) {
         this.funcionario = funcionario;
     }
 

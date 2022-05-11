@@ -42,10 +42,8 @@ public class Historico {
 	public void setSituacaoProcesso(boolean situacaoProcesso) {
 		this.situacaoProcesso = situacaoProcesso;
 	}
-    
-    
-    
-    
-    
+	public ArrayList<Processos> getProcessos() {
+		return processos;
+	}
     
 }

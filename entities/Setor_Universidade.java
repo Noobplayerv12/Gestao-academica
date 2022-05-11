@@ -1,7 +1,5 @@
 package entities;
 
-
-package entities;
 import java.util.ArrayList;
 public class Setor_Universidade {
 
@@ -28,6 +26,10 @@ public class Setor_Universidade {
 
     public void setNomesetor(String nomesetor) {
         this.nomesetor = nomesetor;
+    }
+
+    public ArrayList<Processos> getProcessos() {
+        return processos;
     }
    
 }

@@ -2,21 +2,21 @@ package entities;
 import java.util.ArrayList;
 
 public class Funcionarios extends Pessoa{
-	private Integer numeroRegistro;
+	private String numeroRegistro;
 	private String cargo;
 	private ArrayList<Processos> processos;
 	
-	public Funcionarios(String nome, String cpf, String email, String telefone, Integer numeroRegistro, String cargo) {
+	public Funcionarios(String nome, String cpf, String email, String telefone, String numeroRegistro, String cargo) {
 		super(nome, cpf, email, telefone);
 		this.numeroRegistro = numeroRegistro;
 		this.cargo = cargo;
 	}
 
-	public Integer getNumeroRegistro() {
+	public String getNumeroRegistro() {
 		return numeroRegistro;
 	}
 
-	public void setNumeroRegistro(Integer numeroRegistro) {
+	public void setNumeroRegistro(String numeroRegistro) {
 		this.numeroRegistro = numeroRegistro;
 	}
 
@@ -28,7 +28,9 @@ public class Funcionarios extends Pessoa{
 		this.cargo = cargo;
 	}
 	
-	
+	public ArrayList<Processos> getProcessos() {
+		return processos;
+	}
 	
 	
 }
