@@ -1,6 +1,8 @@
 package entities;
+
 import java.util.Date;
-public class Processos{
+
+public class Processos {
     private int numero;
     private String finalidade;
     private String descricao;
@@ -9,7 +11,8 @@ public class Processos{
     private Funcionarios funcionario;
     private Setor_Universidade setor;
 
-     public Processos(int numero, String finalidade, String descricao, Date dataEntrada, Alunos aluno, Funcionarios funcionario, Setor_Universidade setor) {
+    public Processos(int numero, String finalidade, String descricao, Date dataEntrada, Alunos aluno,
+            Funcionarios funcionario, Setor_Universidade setor) {
         this.numero = numero;
         this.finalidade = finalidade;
         this.descricao = descricao;
@@ -17,6 +20,10 @@ public class Processos{
         this.aluno = aluno;
         this.funcionario = funcionario;
         this.setor = setor;
+    }
+
+    public Processos() {
+
     }
 
     public Alunos getAluno() {
@@ -74,9 +81,5 @@ public class Processos{
     public void setDataEntrada(Date dataEntrada) {
         this.dataEntrada = dataEntrada;
     }
-    
-
-
-
 
 }
