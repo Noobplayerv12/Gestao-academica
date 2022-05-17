@@ -18,6 +18,8 @@ public class Processos{
         this.funcionario = funcionario;
         this.setor = setor;
     }
+    public Processos() {
+    }
 
     public Alunos getAluno() {
         return aluno;
