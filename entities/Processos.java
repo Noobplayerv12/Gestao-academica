@@ -24,10 +24,6 @@ public class Processos {
     public Processos() {
     }
 
-    public Processos() {
-
-    }
-
     public Alunos getAluno() {
         return aluno;
     }
