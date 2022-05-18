@@ -35,9 +35,13 @@ public class Setor_Universidade {
     }
 
     public List<Processos> getProcessos() {
-        return (
-            for(Processos x : processos)
-        );
+        return processos;
+    }
+
+    public void returnProcessos(){
+        for(Processos x : processos){
+            System.out.println(x);
+        };
     }
 
 }

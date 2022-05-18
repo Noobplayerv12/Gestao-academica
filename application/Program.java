@@ -104,7 +104,7 @@ public class Program {
 		switch(idSetor){
 			case 1: 
 				setor1.adcionarProcesso(processo);
-				System.out.println(setor1.getProcessos());
+				setor1.returnProcessos();
 				break;
 			case 2: 
 				setor2.adcionarProcesso(processo);
