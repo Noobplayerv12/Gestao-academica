@@ -1,15 +1,20 @@
 package entities;
 
 import java.util.ArrayList;
+
 public class Setor_Universidade {
 
     private int idsetor;
     private String nomesetor;
     private ArrayList<Processos> processos;
 
+    public void adcionarProcesso(Processos processo) {
+        processos.add(processo);
+    }
+
     public Setor_Universidade(int idsetor, String nomesetor) {
         this.idsetor = idsetor;
-        this.nomesetor = nomesetor;                                                
+        this.nomesetor = nomesetor;
     }
 
     public int getIdsetor() {
@@ -31,5 +36,5 @@ public class Setor_Universidade {
     public ArrayList<Processos> getProcessos() {
         return processos;
     }
-   
+
 }
