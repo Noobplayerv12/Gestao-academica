@@ -7,37 +7,26 @@ public class Processos {
     private String finalidade;
     private String descricao;
     private Date dataEntrada;
-    private Alunos aluno;
-    private Funcionarios funcionario;
+    private Pessoa pessoa;
     private Setor_Universidade setor;
 
-    public Processos(int numero, String finalidade, String descricao, Date dataEntrada, Alunos aluno,
-            Funcionarios funcionario, Setor_Universidade setor) {
+    public Processos(int numero, String finalidade, String descricao, Date dataEntrada, Pessoa pessoa, Setor_Universidade setor) {
         this.numero = numero;
         this.finalidade = finalidade;
         this.descricao = descricao;
         this.dataEntrada = dataEntrada;
-        this.aluno = aluno;
-        this.funcionario = funcionario;
+        this.pessoa = pessoa;
         this.setor = setor;
     }
     public Processos() {
     }
 
-    public Alunos getAluno() {
-        return aluno;
+    public Pessoa getPessoa() {
+        return pessoa;
     }
 
-    public void setAluno(Alunos aluno) {
-        this.aluno = aluno;
-    }
-
-    public Funcionarios getFuncionario() {
-        return funcionario;
-    }
-
-    public void setFuncionario(Funcionarios funcionario) {
-        this.funcionario = funcionario;
+    public void setPessoa(Pessoa pessoa) {
+        this.pessoa = pessoa;
     }
 
     public Setor_Universidade getSetor() {
