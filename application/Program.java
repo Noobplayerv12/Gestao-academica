@@ -85,7 +85,7 @@ public class Program {
 			System.out.println("Código invalido");
 		}
 
-		System.out.print("Escolha o setor de destino:\n [1 - Financeiro \n 2 - RH \n 3 - Secretaria Acadêmica \n 4 - Serviços Gerais]");
+		System.out.print("Escolha o setor de destino:\n 1 - Financeiro \n 2 - RH \n 3 - Secretaria Acadêmica \n 4 - Serviços Gerais\n");
 		Integer idSetor = sc.nextInt();
 		sc.nextLine();
 		
@@ -108,16 +108,19 @@ public class Program {
 				break;
 			case 2: 
 				setor2.adcionarProcesso(processo);
-				System.out.println(setor2.getProcessos());
+				setor2.returnProcessos();
 				break;
 			case 3: 
 				setor3.adcionarProcesso(processo);
-				System.out.println(setor3.getProcessos());
+				setor3.returnProcessos();
 				break;
 			case 4: 
 				setor4.adcionarProcesso(processo);
-				System.out.println(setor4.getProcessos());
+				setor4.returnProcessos();
 				break;
+			default:
+				System.out.println("Setor não encontrado");
+			;
 		}
 
 

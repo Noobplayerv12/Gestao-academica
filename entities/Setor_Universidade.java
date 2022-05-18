@@ -18,19 +18,19 @@ public class Setor_Universidade {
         this.nomesetor = nomesetor;
     }
 
-    public int getIdsetor() {
+    public int getIdSetor() {
         return idsetor;
     }
 
-    public void setIdsetor(int idsetor) {
+    public void setIdSetor(int idsetor) {
         this.idsetor = idsetor;
     }
 
-    public String informaNomesetor() {
+    public String getNomeSetor() {
         return nomesetor;
     }
 
-    public void setNomesetor(String nomesetor) {
+    public void setNomeSetor(String nomesetor) {
         this.nomesetor = nomesetor;
     }
 
@@ -40,8 +40,12 @@ public class Setor_Universidade {
 
     public void returnProcessos(){
         for(Processos x : processos){
-            System.out.println(x);
-        };
-    }
+            System.out.print("/////////////////////////////////////\n"+
+            "Número do processo: "+ x.getDescricao()+
+            "\nFinalidade: "+ x.getFinalidade()+
+            "\nData: "+ x.getDataEntrada()+
+            "\nPessoa: \n");
 
+            };
+    }   
 }
