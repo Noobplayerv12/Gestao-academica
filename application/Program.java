@@ -2,7 +2,6 @@ package application;
 
 import java.util.Scanner;
 import java.util.Date;
-import java.util.*;
 
 import entities.*;
 
@@ -16,7 +15,7 @@ public class Program {
 		Setor_Universidade setor2 = new Setor_Universidade(2, "Recursos Humanos");
 		Setor_Universidade setor3 = new Setor_Universidade(3, "Secretaria Acadêmica");
 		Setor_Universidade setor4 = new Setor_Universidade(4, "Serviós Gerais");
-		
+		Pessoa pessoa = new Pessoa();
 
 		Scanner sc = new Scanner(System.in);
 		System.out.println("O que você é? (1 - aluno ou 2 - Professor)");
@@ -42,14 +41,16 @@ public class Program {
 			System.out.println("Digite o curso do aluno: ");
 			String curso = sc.nextLine();
 			System.out.println("/////////////////////////////////////////////////////////////////////////////////////////////");
-			Alunos pessoa = new Alunos(nome, cpf, email, telefone, matricula, curso);
+			Alunos aluno = new Alunos(nome, cpf, email, telefone, matricula, curso);
 			System.out.println("Aluno cadastrado com sucesso!");
-			System.out.println("Nome: "+pessoa.getNome());
-			System.out.println("CPF: "+pessoa.getCpf());
-			System.out.println("Email: "+pessoa.getEmail());
-			System.out.println("Telefone: "+pessoa.getTelefone());
-			System.out.println("Matricula: "+pessoa.getMatricula());
-			System.out.println("Curso: "+pessoa.getCurso());
+			System.out.println("Nome: "+aluno.getNome());
+			System.out.println("CPF: "+aluno.getCpf());
+			System.out.println("Email: "+aluno.getEmail());
+			System.out.println("Telefone: "+aluno.getTelefone());
+			System.out.println("Matricula: "+aluno.getMatricula());
+			System.out.println("Curso: "+aluno.getCurso());
+
+			pessoa = aluno;
 		} else if(codigo == 2){		
 			System.out.println("Digite o nome do funcionario: ");
 			String nomeFuncionario = sc.nextLine();
@@ -69,15 +70,17 @@ public class Program {
 			System.out.println("Digite o cargo do funcionario: ");
 			String cargoFuncionario = sc.nextLine();
 			System.out.println("/////////////////////////////////////////////////////////////////////////////////////////////");
-			Funcionarios pessoa = new Funcionarios(nomeFuncionario, cpfFuncionario, emailFuncionario, telefoneFuncionario, numeroRegistroFuncionario, cargoFuncionario);
+			Funcionarios funcionario = new Funcionarios(nomeFuncionario, cpfFuncionario, emailFuncionario, telefoneFuncionario, numeroRegistroFuncionario, cargoFuncionario);
 			
 			System.out.println("Funcionario cadastrado com sucesso!");
-			System.out.println("Nome: "+pessoa.getNome());
-			System.out.println("CPF: "+pessoa.getCpf());
-			System.out.println("Email: "+pessoa.getEmail());
-			System.out.println("Telefone: "+pessoa.getTelefone());
-			System.out.println("Nº Registro: "+pessoa.getNumeroRegistro());
-			System.out.println("Cargo: "+pessoa.getCargo());
+			System.out.println("Nome: "+funcionario.getNome());
+			System.out.println("CPF: "+funcionario.getCpf());
+			System.out.println("Email: "+funcionario.getEmail());
+			System.out.println("Telefone: "+funcionario.getTelefone());
+			System.out.println("Nº Registro: "+funcionario.getNumeroRegistro());
+			System.out.println("Cargo: "+funcionario.getCargo());
+
+			pessoa = funcionario;
 		} else{
 			System.out.println("Código invalido");
 		}
@@ -96,21 +99,27 @@ public class Program {
 
     	Date dataEntrada = new Date();
 
-		Processos processo1 = new Processos(, finalidade, descricao, dataEntrada, pessoa);
+		Processos processo = new Processos(numero, finalidade, descricao, dataEntrada, pessoa);
+		
 		switch(idSetor){
 			case 1: 
-				setor1.adcionarProcesso();
+				setor1.adcionarProcesso(processo);
+				System.out.println(setor1.getProcessos());
 				break;
 			case 2: 
-				setor2.adcionarProcesso();
+				setor2.adcionarProcesso(processo);
+				System.out.println(setor2.getProcessos());
 				break;
 			case 3: 
-				setor3.adcionarProcesso();
+				setor3.adcionarProcesso(processo);
+				System.out.println(setor3.getProcessos());
 				break;
 			case 4: 
-				setor4.adcionarProcesso();
+				setor4.adcionarProcesso(processo);
+				System.out.println(setor4.getProcessos());
 				break;
 		}
+
 
 
 		sc.close();

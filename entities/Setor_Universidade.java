@@ -1,12 +1,13 @@
 package entities;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class Setor_Universidade {
 
     private int idsetor;
     private String nomesetor;
-    private ArrayList<Processos> processos;
+    private List<Processos> processos = new ArrayList<>();
 
     public void adcionarProcesso(Processos processo) {
         processos.add(processo);
@@ -33,8 +34,10 @@ public class Setor_Universidade {
         this.nomesetor = nomesetor;
     }
 
-    public ArrayList<Processos> getProcessos() {
-        return processos;
+    public List<Processos> getProcessos() {
+        return (
+            for(Processos x : processos)
+        );
     }
 
 }
