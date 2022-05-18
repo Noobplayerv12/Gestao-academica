@@ -105,6 +105,9 @@ public class Program {
 			case 4: 
 				setor4.adicionarProcesso();
 				break;
+			default:
+				System.out.println("Setor inválido");
+				break;
 		}
 
 
