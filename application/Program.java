@@ -2,6 +2,7 @@ package application;
 
 import java.util.Scanner;
 import java.util.Date;
+import java.util.*;
 
 import entities.*;
 
@@ -15,6 +16,7 @@ public class Program {
 		Setor_Universidade setor2 = new Setor_Universidade(2, "Recursos Humanos");
 		Setor_Universidade setor3 = new Setor_Universidade(3, "Secretaria Acadêmica");
 		Setor_Universidade setor4 = new Setor_Universidade(4, "Serviós Gerais");
+		
 
 		Scanner sc = new Scanner(System.in);
 		System.out.println("O que você é? (1 - aluno ou 2 - Professor)");
@@ -94,18 +96,19 @@ public class Program {
 
     	Date dataEntrada = new Date();
 
+		Processos processo1 = new Processos(, finalidade, descricao, dataEntrada, pessoa);
 		switch(idSetor){
 			case 1: 
-				setor1.adicionarProcesso();
+				setor1.adcionarProcesso();
 				break;
 			case 2: 
-				setor2.adicionarProcesso();
+				setor2.adcionarProcesso();
 				break;
 			case 3: 
-				setor3.adicionarProcesso();
+				setor3.adcionarProcesso();
 				break;
 			case 4: 
-				setor4.adicionarProcesso();
+				setor4.adcionarProcesso();
 				break;
 		}
 

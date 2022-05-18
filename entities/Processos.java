@@ -8,16 +8,13 @@ public class Processos {
     private String descricao;
     private Date dataEntrada;
     private Pessoa pessoa;
-    private Funcionarios funcionario;
-    private Setor_Universidade setor;
 
-    public Processos(int numero, String finalidade, String descricao, Date dataEntrada, Pessoa pessoa, Setor_Universidade setor) {
+    public Processos(int numero, String finalidade, String descricao, Date dataEntrada, Pessoa pessoa) {
         this.numero = numero;
         this.finalidade = finalidade;
         this.descricao = descricao;
         this.dataEntrada = dataEntrada;
         this.pessoa = pessoa;
-        this.setor = setor;
     }
     public Processos() {
     }
@@ -28,14 +25,6 @@ public class Processos {
 
     public void setPessoa(Pessoa pessoa) {
         this.pessoa = pessoa;
-    }
-
-    public Setor_Universidade getSetor() {
-        return setor;
-    }
-
-    public void setSetor(Setor_Universidade setor) {
-        this.setor = setor;
     }
 
     public int getNumero() {
