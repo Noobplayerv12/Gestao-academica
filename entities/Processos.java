@@ -10,13 +10,12 @@ public class Processos {
     private Pessoa pessoa;
     private Setor_Universidade setor;
 
-    public Processos(int numero, String finalidade, String descricao, Date dataEntrada, Pessoa pessoa, Setor_Universidade setor) {
+    public Processos(int numero, String finalidade, String descricao, Date dataEntrada, Pessoa pessoa) {
         this.numero = numero;
         this.finalidade = finalidade;
         this.descricao = descricao;
         this.dataEntrada = dataEntrada;
         this.pessoa = pessoa;
-        this.setor = setor;
     }
     public Processos() {
     }

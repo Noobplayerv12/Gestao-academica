@@ -103,7 +103,13 @@ public class Program {
 		switch(idSetor){
 			case 1: 
 				setor1.adcionarProcesso(processo);
-				setor1.returnProcessos();
+				System.out.println("Processo adicionado com sucesso!");
+				System.out.println("Número do processo: "+processo.getNumero());
+				System.out.println("Finalidade: "+processo.getFinalidade());
+				System.out.println("Descrição: "+processo.getDescricao());
+				System.out.println("Data de entrada: "+processo.getDataEntrada());
+				System.out.println("Setor: "+processo.getSetor().getNomeSetor());
+				
 				break;
 			case 2: 
 				setor2.adcionarProcesso(processo);

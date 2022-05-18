@@ -5,33 +5,33 @@ import java.util.List;
 
 public class Setor_Universidade {
 
-    private int idsetor;
-    private String nomesetor;
+    private int idSetor;
+    private String nomeSetor;
     private List<Processos> processos = new ArrayList<>();
 
     public void adcionarProcesso(Processos processo) {
         processos.add(processo);
     }
 
-    public Setor_Universidade(int idsetor, String nomesetor) {
-        this.idsetor = idsetor;
-        this.nomesetor = nomesetor;
+    public Setor_Universidade(int idSetor, String nomeSetor) {
+        this.idSetor = idSetor;
+        this.nomeSetor = nomeSetor;
     }
 
     public int getIdsetor() {
-        return idsetor;
+        return idSetor;
     }
 
-    public void setIdsetor(int idsetor) {
-        this.idsetor = idsetor;
+    public void setIdSetor(int idSetor) {
+        this.idSetor = idSetor;
     }
 
-    public String informaNomesetor() {
-        return nomesetor;
+    public String getNomeSetor() {
+        return nomeSetor;
     }
 
-    public void setNomesetor(String nomesetor) {
-        this.nomesetor = nomesetor;
+    public void setNomeSetor(String nomeSetor) {
+        this.nomeSetor = nomeSetor;
     }
 
     public List<Processos> getProcessos() {
