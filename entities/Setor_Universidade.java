@@ -43,9 +43,9 @@ public class Setor_Universidade {
             System.out.print("/////////////////////////////////////\n"+
             "Número do processo: "+ x.getDescricao()+
             "\nFinalidade: "+ x.getFinalidade()+
-            "\nData: "+ x.getDataEntrada()+
-            "\nPessoa: \n");
+            "\nData: "+ x.getDataEntrada()+"\n");
 
             };
-    }   
+    }
+
 }

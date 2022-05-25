@@ -4,12 +4,14 @@ import java.util.ArrayList;
 public class Funcionarios extends Pessoa{
 	private String numeroRegistro;
 	private String cargo;
+	private Setor_Universidade setor;
 	private ArrayList<Processos> processos;
 	
-	public Funcionarios(String nome, String cpf, String email, String telefone, String numeroRegistro, String cargo) {
+	public Funcionarios(String nome, String cpf, String email, String telefone, String numeroRegistro, String cargo, Setor_Universidade setor) {
 		super(nome, cpf, email, telefone);
 		this.numeroRegistro = numeroRegistro;
 		this.cargo = cargo;
+		this.setor = setor;
 	}
 
 	public String getNumeroRegistro() {
@@ -32,5 +34,11 @@ public class Funcionarios extends Pessoa{
 		return processos;
 	}
 	
-	
+	public void setSetor(Setor_Universidade setor) {
+		this.setor = setor;
+	}
+
+	public Setor_Universidade getSetor() {
+		return setor;
+	}
 }
