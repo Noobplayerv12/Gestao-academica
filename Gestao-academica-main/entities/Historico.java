@@ -7,17 +7,19 @@ import java.util.Date;
 public class Historico {
 
 	private Date dataEncaminhamento;
-	private String orgaoDestino;
-	private boolean parecer;
-	private boolean situacaoProcesso;
+	private Setor_Universidade setorDestino;
+	private String parecer;
+	private String situacaoProcesso;
 	private ArrayList<Processo> processos;
 
-	public Historico(Date dataEncaminhamento, String orgaoDestino, boolean parecer, boolean situacaoProcesso) {
+	public Historico(Date dataEncaminhamento, Setor_Universidade setorDestino, String parecer,
+			String situacaoProcesso) {
 		super();
 		this.dataEncaminhamento = dataEncaminhamento;
-		this.orgaoDestino = orgaoDestino;
+		this.setorDestino = setorDestino;
 		this.parecer = parecer;
 		this.situacaoProcesso = situacaoProcesso;
+		this.processos = new ArrayList<Processo>();
 	}
 
 	public Date getDataEncaminhamento() {
@@ -28,27 +30,27 @@ public class Historico {
 		this.dataEncaminhamento = dataEncaminhamento;
 	}
 
-	public String getOrgaoDestino() {
-		return orgaoDestino;
+	public Setor_Universidade getsetorDestino() {
+		return setorDestino;
 	}
 
-	public void setOrgaoDestino(String orgaoDestino) {
-		this.orgaoDestino = orgaoDestino;
+	public void setOrgaoDestino(Setor_Universidade setorDestino) {
+		this.setorDestino = setorDestino;
 	}
 
-	public boolean isParecer() {
+	public String getParecer() {
 		return parecer;
 	}
 
-	public void setParecer(boolean parecer) {
+	public void setParecer(String parecer) {
 		this.parecer = parecer;
 	}
 
-	public boolean isSituacaoProcesso() {
+	public String getSituacaoProcesso() {
 		return situacaoProcesso;
 	}
 
-	public void setSituacaoProcesso(boolean situacaoProcesso) {
+	public void setSituacaoProcesso(String situacaoProcesso) {
 		this.situacaoProcesso = situacaoProcesso;
 	}
 

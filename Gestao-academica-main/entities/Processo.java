@@ -10,6 +10,7 @@ public class Processo {
     private Alunos aluno;
     private Funcionarios funcionario;
     private int setor;
+    Historico historico;
 
     public Processo(int numero, String finalidade, String descricao, Date dataEntrada, Alunos aluno,
             int setor) {

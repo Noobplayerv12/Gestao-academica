@@ -65,13 +65,13 @@ public class Program {
 					;
 			}
 			// Encaminha processo
-			setor1.encaminharProcesso(processo, setor2);
 
 			// #endregion
 		} else if (codigo == 2) {
 
-			Funcionarios professor = new Funcionarios("Joao", "05511612132", "joao@gmail.com", "7154545646",
-					"35332332", "Professor");
+			Funcionarios professor = new Funcionarios("Arnaldo", "56656564564", "Thiago@thiago.com", "564646654",
+					"54445456",
+					"Professor");
 
 			System.out.println("Digite o número do Processo:");
 			int numero = sc.nextInt();
@@ -112,8 +112,18 @@ public class Program {
 					System.out.println("Setor não encontrado");
 					;
 			}
+			// Verifica se o processo foi cadastrado no setor1
+			for (int i = 0; i < setor1.qntdProcesso(); i++) {
+				System.out.println("\n" + setor1.getProcesso(i).getFinalidade());
+			}
 
-			setor1.encaminharProcesso(processo, setor2);
+			// Encaminha do setor 1 para o setor 2
+			setor1.encaminharProcesso(processo, setor1, setor2);
+
+			// verifica de processo foi realmente encaminhado
+			for (int i = 0; i < setor2.qntdProcesso(); i++) {
+				System.out.println("\n" + setor2.getProcesso(i).getFinalidade());
+			}
 
 			sc.close();
 		}
