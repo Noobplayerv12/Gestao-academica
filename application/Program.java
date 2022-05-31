@@ -9,6 +9,10 @@ public class Program {
 	static Scanner sc = new Scanner(System.in);
 	static Pessoa pessoa = new Pessoa();
 	static Integer codigo = -1;
+	static ArrayList<Historico> historicos = new ArrayList<Historico>();
+	static ArrayList<Processos> processos = new ArrayList<Processos>();
+	static ArrayList<Funcionarios> funcionarios = new ArrayList<Funcionarios>();
+	static ArrayList<Alunos> alunos = new ArrayList<Alunos>();
 
 	public static void main(String[] args) {
 
@@ -17,13 +21,13 @@ public class Program {
 		Setor_Universidade setor2 = new Setor_Universidade(2, "Recursos Humanos");
 		Setor_Universidade setor3 = new Setor_Universidade(3, "Secretaria Acadêmica");
 		Setor_Universidade setor4 = new Setor_Universidade(4, "Serviços Gerais");
-		
+
 		setores.add(setor1);
 		setores.add(setor2);
 		setores.add(setor3);
 		setores.add(setor4);
 
-		
+
 		while (codigo != 3) {
 			//menu
 			System.out.println("O que você é? (1 - aluno ou 2 - Funcionário 3 - Cancelar)");
@@ -104,9 +108,6 @@ public class Program {
 								System.out.println("Cargo: "+funcionario.getCargo());
 								System.out.println("Setor: "+funcionario.getSetor().getNomeSetor());
 								pessoa = funcionario;
-								System.out.println("O que você deseja fazer? (1 - Cadastrar novo Setor 2 - Cadastrar novo Processo 3 - Cancelar)");
-								codigo = sc.nextInt();
-								sc.nextLine();
 								oQueFazer();
 							}
 						}
@@ -130,7 +131,6 @@ public class Program {
 						System.out.println("Cargo: "+funcionario.getCargo());
 						System.out.println("Setor: "+funcionario.getSetor().getNomeSetor());
 						pessoa = funcionario;
-						System.out.println("O que você deseja fazer? (1 - Cadastrar novo Setor 2 - Cadastrar novo Processo 3 - Cancelar)");
 						oQueFazer();
 					}
 				}
@@ -138,6 +138,7 @@ public class Program {
 
 			} else if (codigo == 3){
 				System.out.println("Obrigado por utilizar o sistema!");
+
 				System.exit(0);
 			} else {
 				System.out.println("Opção inválida!\nInforme novamente.");
@@ -147,9 +148,10 @@ public class Program {
 		sc.close();
 	}
 
-	public static void oQueFazer(){
+	public static int oQueFazer(){
 		codigo = 0;
-		while (codigo > setores.size() || codigo < 0) {
+		while (codigo != 3) {
+		System.out.println("O que você deseja fazer? (1 - Cadastrar novo Setor 2 - Cadastrar novo Processo 3 - Cancelar 4 - Listar Histórico)");
 		codigo = sc.nextInt();
 		sc.nextLine();
 			if(codigo == 1){
@@ -170,10 +172,16 @@ public class Program {
 				String finalidade= sc.nextLine();
 				System.out.println("Digite a descrição:");
 				String descricao = sc.nextLine();
+				System.out.println("Digite 1 para Processo aprovado ou 2 para Processo recusado:");
+				String parecer = sc.nextLine();
+				System.out.println("Digite 1 para o Processo estar completo ou 2 para o Processo estar em análise:");
+				String situacao = sc.nextLine();
 
 				Date dataEntrada = new Date();
 
 				Processos processo = new Processos(numero, finalidade, descricao, dataEntrada, pessoa);
+				criarHistorico(processo , situacao, parecer);
+
 				while (codigo != 0) {
 					codigo = -1;
 					System.out.print("Escolha o setor de destino:\n");
@@ -191,12 +199,14 @@ public class Program {
 						for (Setor_Universidade setor_Universidade : setores) {
 							if(idSetor == setor_Universidade.getIdSetor()){
 								processo.setSetor(setor_Universidade);
+								setor_Universidade.setProcessos(processo);
 								System.out.println("Processo cadastrado com sucesso!");
 								System.out.println("Número: "+processo.getNumero());
 								System.out.println("Finalidade: "+processo.getFinalidade());
 								System.out.println("Descrição: "+processo.getDescricao());
 								System.out.println("Data de entrada: "+processo.getDataEntrada());
 								System.out.println("Setor: "+processo.getSetor().getNomeSetor());
+								processos.add(processo);
 								verificaSetor = true;
 							}
 						}
@@ -210,13 +220,42 @@ public class Program {
 			}
 			else if(codigo == 3){
 				System.out.println("Cancelado!");
-				break;
-			} else {
+			}
+			else if(codigo == 4){
+				listarHistorico();
+			}
+			 else {
 				System.out.println("Opção inválida!");
-				System.out.print(codigo); 
-				break;
+				System.out.println("Digite o Código novamente!");
 			}
 		}
-	}
+		return 0;
+	};
+
+	public static void criarHistorico(Processos processos, String parecer, String status){
+		Historico historico = new Historico();
+		if(status.equals("1")){
+			historico.setSituacaoProcesso(true);
+		} else if(status.equals("2")){
+			historico.setSituacaoProcesso(false);
+		}
+		if(parecer.equals("1")){
+			historico.setParecer(true);
+		} else if(parecer.equals("2")){
+			historico.setParecer(false);
+		}
+		historico.setDataEncaminhamento(new Date());
+		historico.setOrgaoDestino(processos.getSetor());
+		historicos.add(historico);
+	};
+
+	public static void listarHistorico(){
+		for (Historico historico1 : historicos) {
+			System.out.println("Data de encaminhamento: "+historico1.getDataEncaminhamento()+"\n");
+			System.out.println("Situacao do processo: "+ (historico1.isSituacaoProcesso() == true ? "Concluído" : "em Análise") + "\n");
+			System.out.println("Parecer: "+ (historico1.isParecer() == true ? "Aprovado" : "Recusado") + "\n");
+			System.out.println("-----------------------------------------------------\n");
+		}
+	};
 
 }

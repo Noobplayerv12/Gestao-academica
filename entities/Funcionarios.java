@@ -41,4 +41,9 @@ public class Funcionarios extends Pessoa{
 	public Setor_Universidade getSetor() {
 		return setor;
 	}
+
+	public void setProcessos(ArrayList<Processos> processos) {
+		this.processos = processos;
+	}
+
 }

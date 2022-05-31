@@ -20,6 +20,10 @@ public class Processos {
     public Processos() {
     }
 
+    public String getNomePessoa(){
+        return pessoa.getNome();
+    }
+
     public Pessoa getPessoa() {
         return pessoa;
     }
@@ -60,8 +64,8 @@ public class Processos {
         this.descricao = descricao;
     }
 
-    public Date getDataEntrada() {
-        return dataEntrada;
+    public String getDataEntrada() {
+        return dataEntrada.toString();
     }
 
     public void setDataEntrada(Date dataEntrada) {

@@ -7,7 +7,7 @@ public class Setor_Universidade {
 
     private int idSetor;
     private String nomeSetor;
-    private List<Processos> processos = new ArrayList<>();
+    private ArrayList<Processos> processos = new ArrayList<>();
 
     public void adcionarProcesso(Processos processo) {
         processos.add(processo);
@@ -27,7 +27,7 @@ public class Setor_Universidade {
     }
 
     public String getNomeSetor() {
-        return nomeSetor;
+        return nomeSetor.toString();
     }
 
     public void setNomeSetor(String nomesetor) {
@@ -36,6 +36,14 @@ public class Setor_Universidade {
 
     public List<Processos> getProcessos() {
         return processos;
+    }
+
+    public Processos getProcesso(int i){
+        return processos.get(i);
+    }
+
+    public void setProcessos(Processos processos) {
+        this.processos.add(processos);
     }
 
     public void returnProcessos(){
