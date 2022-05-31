@@ -27,7 +27,7 @@ public class Setor_Universidade {
     }
 
     public String getNomeSetor() {
-        return nomeSetor.toString();
+        return nomeSetor;
     }
 
     public void setNomeSetor(String nomesetor) {
