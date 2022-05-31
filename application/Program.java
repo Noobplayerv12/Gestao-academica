@@ -8,6 +8,7 @@ public class Program {
 	static ArrayList<Setor_Universidade> setores = new ArrayList<Setor_Universidade>();
 	static Scanner sc = new Scanner(System.in);
 	static Pessoa pessoa = new Pessoa();
+	static Integer codigo = -1;
 
 	public static void main(String[] args) {
 
@@ -22,7 +23,7 @@ public class Program {
 		setores.add(setor3);
 		setores.add(setor4);
 
-		Integer codigo = -1;
+		
 		while (codigo != 3) {
 			//menu
 			System.out.println("O que você é? (1 - aluno ou 2 - Funcionário 3 - Cancelar)");
@@ -106,7 +107,7 @@ public class Program {
 								System.out.println("O que você deseja fazer? (1 - Cadastrar novo Setor 2 - Cadastrar novo Processo 3 - Cancelar)");
 								codigo = sc.nextInt();
 								sc.nextLine();
-								oQueFazer(codigo);
+								oQueFazer();
 							}
 						}
 					} else if (setor > setores.size() || setor < 0) {
@@ -130,9 +131,7 @@ public class Program {
 						System.out.println("Setor: "+funcionario.getSetor().getNomeSetor());
 						pessoa = funcionario;
 						System.out.println("O que você deseja fazer? (1 - Cadastrar novo Setor 2 - Cadastrar novo Processo 3 - Cancelar)");
-						codigo = sc.nextInt();
-						sc.nextLine();
-						oQueFazer(codigo);
+						oQueFazer();
 					}
 				}
 				while (setor > setores.size() || setor < 0);
@@ -148,8 +147,11 @@ public class Program {
 		sc.close();
 	}
 
-	public static void oQueFazer(int codigo){
-		while (codigo != 3) {
+	public static void oQueFazer(){
+		codigo = 0;
+		while (codigo > setores.size() || codigo < 0) {
+		codigo = sc.nextInt();
+		sc.nextLine();
 			if(codigo == 1){
 				System.out.println("Digite o nome do novo setor: ");
 				String nomeSetor = sc.nextLine();
@@ -211,6 +213,8 @@ public class Program {
 				break;
 			} else {
 				System.out.println("Opção inválida!");
+				System.out.print(codigo); 
+				break;
 			}
 		}
 	}
