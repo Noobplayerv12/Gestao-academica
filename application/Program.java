@@ -62,7 +62,7 @@ public class Program {
 				System.out.println("Telefone: "+aluno.getTelefone());
 				System.out.println("Matricula: "+aluno.getMatricula());
 				System.out.println("Curso: "+aluno.getCurso());
-	
+				oQueFazer();
 				pessoa = aluno;
 			} else if(codigo == 2){	
 				//criação de funcionários
