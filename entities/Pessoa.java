@@ -14,6 +14,9 @@ public class Pessoa {
 		this.email = email;
 		this.telefone = telefone;
 	}
+	public Pessoa() {
+		super();
+	}
 
 	public String getNome() {
 		return nome;
@@ -46,7 +49,4 @@ public class Pessoa {
 	public void setTelefone(String telefone) {
 		this.telefone = telefone;
 	}
-	
-	
-	
 }
